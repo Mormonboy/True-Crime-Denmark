@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montenegro | True Crime Denmark</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            font-family: Calibri, sans-serif;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            background-color: white;
+            min-height: 100vh;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        a {
+            color: darkred;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <a href="index.html">← Tilbage til forsiden</a>
+
+<!-- ÚJ BLOGBEJEGYZÉS MINTA -->
+        
+        <div class="blog-post">
+            <h2>Lolcows </h2>
+
+ <div class="blog-post">
+<a href="tophiachu.html">Dronningen af lolcowerne</a>
+        </div>  
+ <div class="blog-post">
+<a href="foodie.html">Den canadiske Amberlynn Reid</a>
+        </div>  
+ <div class="blog-post">
+<a href="amberlynn.html">Den slankekure-youtuber, der er nu overvægtig</a>
+        </div>  
+
+
+        </div>
+
+        <!-- ADSENSE HELYE -->
+        <div class="adsense-box">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6088348392488500"
+     crossorigin="anonymous"></script>
+        </div>
+
+     <div class="blog-post">
+<a href="https://ultgo.com/la-com/ENGLISH/dFEl8liU">The best financial website</a>
+        </div>     
+
+     
+
+</body>
+</html>
