@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>True Crime Denmark</title>
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
         body {
             margin: 0;
@@ -24,31 +27,59 @@
 
         h1 {
             text-align: center;
-            color: black;
-            margin-bottom: 30px;
         }
 
+        /* SEARCH */
         .search-box {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .search-box input {
             width: 60%;
             padding: 12px;
-            font-size: 16px;
             border: 2px solid black;
         }
 
         .search-box button {
             padding: 12px 20px;
-            font-size: 16px;
-            background-color: black;
+            background: black;
             color: white;
             border: none;
             cursor: pointer;
         }
 
+        /* ICON CARDS */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .card {
+            display: block;
+            text-align: center;
+            padding: 20px;
+            border-radius: 12px;
+            background: #f4f4f4;
+            text-decoration: none;
+            color: black;
+            transition: 0.3s;
+        }
+
+        .card i {
+            font-size: 28px;
+            color: darkred;
+            margin-bottom: 10px;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            background: #e9e9e9;
+        }
+
+        /* BLOG */
         .blog-post {
             margin-bottom: 40px;
         }
@@ -58,49 +89,102 @@
         }
 
         .blog-post p {
-            color: black;
             line-height: 1.6;
         }
 
-        .adsense-box {
-            border-top: 2px solid black;
-            border-bottom: 2px solid black;
-            padding: 20px;
-            margin: 40px 0;
-            text-align: center;
-            font-weight: bold;
-            color: gray;
+        /* FOOTER MENU */
+        .footer-menu {
+            margin-top: 40px;
         }
 
-        .footer {
-            text-align: center;
-            margin-top: 50px;
-            color: gray;
-        }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <h1>True Crime Denmark</h1>
+    <h1>True Crime Denmark</h1>
 
-        <!-- KERESÉS -->
-<div class="search-box">
-    <input type="text" id="searchInput" placeholder="Søg i blogindlæg...">
-    <button onclick="searchPosts()">Søg</button>
+    <!-- SEARCH -->
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Søg i blogindlæg...">
+        <button onclick="searchPosts()">Søg</button>
+    </div>
+
+    <!-- KATEGÓRIA IKONOK -->
+    <div class="grid">
+
+        <a class="card" href="musik.html">
+            <i class="fa-solid fa-music"></i>
+            <h3>Musik</h3>
+        </a>
+
+        <a class="card" href="#manson">
+            <i class="fa-solid fa-mask"></i>
+            <h3>Manson Family</h3>
+        </a>
+
+        <a class="card" href="#kvinder">
+            <i class="fa-solid fa-user-ninja"></i>
+            <h3>Kvinder</h3>
+        </a>
+
+    </div>
+
+    <!-- BLOG BEJEGYZÉSEK -->
+    <div class="blog-post" id="manson">
+        <h2>Manson Family mordene</h2>
+        <p>...</p>
+    </div>
+
+    <div class="blog-post" id="kvinder">
+        <h2>Kvindelige massemordere</h2>
+        <p>...</p>
+    </div>
+
+    <!-- ALSÓ MENÜ IKONOKKAL -->
+    <div class="grid footer-menu">
+
+        <a class="card" href="omos.html">
+            <i class="fa-solid fa-circle-info"></i>
+            <h3>Om os</h3>
+        </a>
+
+        <a class="card" href="vilkar.html">
+            <i class="fa-solid fa-file-contract"></i>
+            <h3>Vilkår</h3>
+        </a>
+
+        <a class="card" href="disclaimer.html">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <h3>Disclaimer</h3>
+        </a>
+
+        <a class="card" href="privatlivspolitik.html">
+            <i class="fa-solid fa-user-shield"></i>
+            <h3>Privatliv</h3>
+        </a>
+
+        <a class="card" href="kontakt.html">
+            <i class="fa-solid fa-envelope"></i>
+            <h3>Kontakt</h3>
+        </a>
+
+    </div>
+
+    <div class="footer">
+        © 2026 True Crime Denmark
+    </div>
+
 </div>
 
 <script>
 function searchPosts() {
-
     let input = document.getElementById("searchInput").value.toLowerCase();
-
     let posts = document.getElementsByClassName("blog-post");
 
     for (let i = 0; i < posts.length; i++) {
-
         let text = posts[i].innerText.toLowerCase();
 
         if (text.includes(input)) {
@@ -111,193 +195,6 @@ function searchPosts() {
     }
 }
 </script>
-
-        <!-- ELSŐ BLOGBEJEGYZÉS -->
-        <div class="blog-post">
-            <h2>Manson Family mordene</h2>
-
-           <p>
-Den 9. august 1969 vågnede Los Angeles op til en forfærdelig nyhed. I Beverly Hills, på adressen 10050 Cielo Drive, i filminstruktøren Roman Polanskis villa, blev fem mennesker brutalt myrdet. Blandt ofrene var også Sharon Tate, Polanskis otte og en halv måned gravide kone, som blev dræbt med 16 knivstik og fik et reb viklet om halsen. Den anden ende af rebet blev viklet om halsen på hendes ven, den berømte frisør Jay Sebring, som blev skudt og stukket syv gange. Deres lig lå i villaens stue, de tre andre i haven. Woyciech Frykowski, Polanskis ven og manuskriptforfatter, lå i en flugtposition i haven. Han må have været meget sej, for det var ham, de gik hårdest til: de skød ham to gange, slog ham ihjel med geværkolben og stak ham 51 gange. Længere væk lå Frykowskis kæreste, arvingen til Folger Coffee-imperiet, Abigail Folger, som blev stukket 28 gange. Ikke langt fra porten sad den 18-årige Steven Parent, viceværtens ven, i en bil, hvor han blev skudt fire gange. På bygningens dør blev ordet Pig ("Svin") malet med Sharons blod.
-</p>
-
-<p>
-Polanski overlevede massakren, da han netop arbejdede på sin seneste film i London. Vagtmanden William Garretson overlevede også og sov endda igennem massakren. Der var endnu en ansat, den sorte husholderske Winifred Chapman, som tilbragte alle sine nætter i sin egen lejlighed. Da hun mødte på arbejde den 9. august, fandt hun sporene efter massakren fra den foregående aften og ringede til politiet. Da efterforskerne ankom, var deres første opgave at anholde Garretson.
-</p>
-
-<p>
-Den unge vicevært hævdede, at han havde sovet igennem massakren. Politiet troede ikke på ham, da naboerne også bekræftede, at de havde hørt skrigene – men de troede, at Sharon og hendes familie så en gyserfilm. Samtidig var det åbenlyst, at en enkelt person ikke ville være i stand til et så stort blodbad, så de beordrede viceværten til at afsløre sine medskyldige. Garretson benægtede alt, men indrømmede, at Steven Parent var hans ven og var på besøg hos ham den skæbnesvangre aften. Det tog lang tid, men til sidst lykkedes det at frifinde Garretson.
-</p>
-
-<p>
-Men den 10. august kom endnu en forfærdelig nyhed frem. Supermarkedsejeren Leno LaBianca blev brutalt myrdet sammen med sin kone, Rosemary, i Los Feliz-kvarteret i Los Angeles. Massakren blev opdaget af ofrenes søn, datter og hendes kæreste, da de besøgte deres forældre i deres hjem på Waverly Drive 3301. Leno LaBianca blev stukket 26 gange med sin egen bajonet, og ordet WAR ("Krig") blev ridset ind i hans mave. Rosemary LaBianca blev dræbt i soveværelset med 42 stik, og inden hun døde, trak man et pudebetræk over hendes hoved og viklede en lampesnor om hendes hals. Med ofrenes blod malede morderne ordene "Death to Pigs" ("Død over svinene") og "Rise" ("Rejs jer!") på væggen og ordene "HeaLter SkeLTter" på køleskabet.
-</p>
-
-<p>
-Offentligheden mente, at den fraværende Roman Polanski havde fået de mennesker, der blev fundet på Cielo Drive 10050, myrdet. (LaBianca-sagen blev ikke inddraget i teorien.) Nogle mente, at filmregissøren var vred over Sharon Tate og Jay Sebrings venskab (da de tidligere havde været kærester), og at han derfor kunne have fået dem myrdet. Andre hævdede igen, at Polanski kun ville have Woyciech Frykowski dræbt, og at de andre blot var på det forkerte sted på det forkerte tidspunkt. Ifølge den tredje teori var det den polske efterretningstjeneste, der dræbte de fem ofre, ligeledes på grund af Frykowski. Polanski udlovede i mellemtiden en dusør til den, der kunne give politiet oplysninger.
-</p>
-
-<p>
-Da massakren i Beverly Hills hørte under byens efterforskere, mens den i Los Feliz hørte under amtets efterforskere, blev de to sager behandlet helt separat. Det var en kæmpe fejl. De kommunale efterforskere var stadig overbevist om, at William Garretson var gerningsmanden. Selvom begge efterforskningskontorer i starten mistænkte et røverimord, indså de amtslige efterforskere senere, at der næsten ikke var forsvundet noget fra LaBianca-huset. De måtte derfor lede efter et andet motiv.
-</p>
-
-<p>
-Amtets efterforskere var også mere opmærksomme på andre ting. De havde endnu en uafsluttet sag om et mord begået den 25. juli 1969. Offeret, musiklæreren Gary Hinman, var blevet stukket ihjel i sit eget hjem, og på væggen var der malet ordene "Political piggy" og Black Panthers-symbolet med offerets blod. Mordmetoden og den malede inskription på væggen viste en overraskende lighed med LaBianca-sagen.  Der var allerede en mistænkt i Hinman-mordet, en musiker ved navn Bobby Beausoleil. Efterforskerne fandt ud af, at manden havde forbindelse til et hippiekollektiv kaldet The Family. The Family kom dermed på listen over mistænkte i både Hinman- og LaBianca-mordene.
-</p>
-
-<p>
-I mellemtiden fandt en 10-årig dreng en snavset, rusten .22-kaliber pistol. Han viste den til sin far, som afleverede den på byens politistation. Pistolens træskæfte var brudt, hvilket vakte efterforskernes opmærksomhed. I Woyciech Frykowskis hovedskade havde de nemlig fundet træsplinter, så det var sandsynligt, at han var blevet slået ihjel med geværkolben. Men beviset forsvandt på en eller anden måde og dukkede først op igen langt senere.
-</p>
-
-<p>
-Efter tre lange måneder indså de to efterforskningskontorer endelig, at de var nødt til at efterforske Tate- og LaBianca-sagerne i fællesskab, og at de ikke kunne fange gerningsmændene uden hinandens hjælp. Men da de stadig ikke havde noget brugbart spor, tog de Hinman-sagen frem igen. Politiet besøgte Spahn-gården, hvor The Family boede, og afhørte hippierne.
-</p>
-
-<p>
-Da de observerede kommunet nærmere, blev de opmærksomme på chokerende ting. Hippierne virkede som om de havde været udsat for hjernevask, og alle var ubetingede tilhængere af lederen, Charles Manson. Manden var praktisk talt en diktator inden for sekten, som alle adlød. For eksempel var det forbudt at bære briller, drikke alkohol, tage p-piller osv. Pigerne måtte ikke spørge, hvorfor. Måltiderne havde også en bestemt rækkefølge. Først måtte mændene spise, derefter hundene, og først til sidst kvinderne. På trods af dette ærede og fulgte alle Manson som en gud.
-</p>
-
-<p>
-Charles Manson var søn af en aggressiv prostitueret, der en gang solgte ham for en kande øl. Manden tilbragte det meste af sit liv i ungdomsfængsler og fængsler, hvor han blev en professionel manipulator. Han sad i fængsel for at drive prostitution, var professionel biltyv, havde tendenser til biseksualitet og voldtægt og så ned på sorte og kvinder. Han er den dag i dag skizofren, men hans IQ ligger mellem 109 og 120.
-</p>
-
-<p>
-En af pigerne, den 17-årige Mary Brunner, brød sammen under afhøringerne. Hun fortalte, at Manson havde sendt hende, Bobby Beausoleil og et andet kvindeligt medlem, Sadie Mae, hen til Gary Hinman for at stjæle hans penge. De overfaldt manden, bandt ham og holdt ham fanget i to dage. Den 25. juli kom Manson selv til og skar Hinmans ene øre af med en kniv. Derefter beordrede han Beausoleil til at dræbe musiklæreren. Manden adlød.
-</p>
-
-<p>
-Efterforskerne fandt ud af, at alle sektmedlemmer havde fået et dæknavn af Manson, og det var sådan, de kendte hinanden. Et af disse falske navne var Sadie Mae Glutz. Det var navnet på den pige, der ifølge Mary Brunner havde medvirket til mordet på Hinman. Brunner fortalte også, at kort efter mordet på musiklæreren stak Sadie en mand (Woyciech Frykowski) groft i benet. Efterforskerne fandt ud af, at pigens rigtige navn var Susan Denise Atkins, som straks blev anholdt.
-</p>
-
-<p>
-Atkins fortalte næsten uden modstand, at hun også havde deltaget i drabet på Gary Hinman. Hun fortalte også, at de sorte i fremtiden ville gøre oprør mod de hvides herredømme og udrydde den anden race. I mellemtiden vil Familien gemme sig i en hule, og når de sorte overtager magten over verden, vil Manson-klanen træde frem og undertrykke de sorte. Atkins havde hørt dette fra Charles Manson selv, og hun var stolt af at kunne opfylde profetien.
-</p>
-
-<p>
-Efterforskerne kunne have glædet sig over at have løst mysteriet om Gary Hinmans død. Men deres opgave var at opklare Tate-LaBianca-sagen, som de ikke var kommet et skridt nærmere.
-</p>
-
-<p>
-I mellemtiden dukkede en motorcyklist, Danny DeCarlo, også op. Manden vidnede mod Familien i Hinman-sagen og nævnte drabet på en kasak, Donald Shea. Manden blev dræbt af en mand ved navn Steve "Clem" Grogan, hvorefter sekten skar liget i ni stykker og begravede det. De Carlo genkendte desuden den .22'er med det knækkede skæfte. Han hævdede, at han på Spahn-gården havde set Manson, Charles "Tex" Watson og Patricia "Katie" Krenwinkel øve sig med våbnet.
-</p>
-
-<p>
-Der var endnu et meget hjælpsomt vidne i sagen. Ronnie Howard havde ingen forbindelse til Manson, men påstod alligevel, at han havde oplysninger om Tate-massakren. Howard sad i fængsel for prostitution og blev cellekammerat med den allerede nævnte Susan Atkins. Hun fortalte, at pigen var meget snakkesalig og pralede over for hende med, at hun havde deltaget i Tate-mordene. Hvad mere er, hun erklærede over for hende, at det var hende, der havde myrdet den gravide skuespillerinde. Atkins angav også sine medskyldige, nemlig Tex Watson, Patricia Krenwinkel og Linda Kasabian. De mistænkte blev pågrebet. Derudover blev Leslie Van Houten, med tilnavnet "Lulu", der havde medvirket til LaBianca-mordene, også anholdt.
-</p>
-
-<p>
-Efterforskerne tilbød Atkins en strafnedsættelse, hvis han vidnede mod Manson. Han accepterede ikke tilbuddet, men Linda Kasabian gjorde.  Ud fra vidneudsagnene fra Linda, Atkins og Ronnie Howard samt beviserne fra gerningsstedet rekonstruerede efterforskerne forløbet af de to mord.
-</p>
-
-<p>
-Den 8. august 1969 sendte Manson Watson, Atkins, Krenwinkel og Kasabian (hun blev slæbt med, fordi hun var den eneste, der havde kørekort) ud til 10050 Cielo Drive for at dræbe alle de mennesker, de fandt der, på den mest brutale måde. Kvartetten klatrede over hegnet, hvor de fandt Steven Parent siddende i sin bil. Tex dræbte drengen med fire skud. Derefter skar manden myggenettet af et af vinduerne , kravlede ind og åbnede hoveddøren indefra. Han lod Kasabian holde vagt udenfor, men lukkede de andre ind. I stuen fandt de Woyciech Frykowski liggende på sofaen, og Watson sagde til ham: "Jeg er djævelen, og jeg er kommet for at ordne djævelens sager!" Pigerne førte også Folger, Sebring og Tate ind i stuen. De beordrede alle til at lægge sig på gulvet, men Sebring hævede stemmen på grund af den grove behandling af Sharon. Tex skød manden uden tøven. De viklede et reb om Sharons hals, kastede den anden ende over en bjælke og bandt den fast om den døende Jays hals. Frykowskis hænder blev bundet sammen med et håndklæde, men det slap løs, og han angreb Atkins. Pigen stak manden fire gange i benene, mens Tex skød ham to gange og slog ham ihjel med geværkolben. Abigail Folger løb ud i haven, men Krenwinkel fulgte efter hende og stak hende flere gange. Linda Kasabian løj for Atkins og sagde, at der var nogen på vej, men hun kunne ikke længere standse massakren. Frykowski vaklede også ud i gården, men Watson fulgte efter ham og dræbte ham med 51 stik. Morderen skånede heller ikke Jay Sebring, som han stak yderligere syv gange. Sharon tilbød i mellemtiden Atkins penge og tiggede om sit barns liv, men hippiepigen sagde til hende: "Hør her, din kælling, der er ingen nåde for dig. Du skal dø, og det er bedst, du finder dig i det!" Sharon råbte efter sin mor, før Susan dræbte hende med 16 knivstik. Derefter tog hun Frykowskis håndklæde, dyppede det i Tates blod og malede ordet "Pig" på husets dør. Da gruppen forlod huset, opdagede Tex, at Abigail Folger stadig var i live. Kvinden tiggede ham om endelig at dræbe hende, hvilket Watson villigt efterkom. Der var i alt 28 stikmærker på kvindens lig.
-</p>
-
-<p>
-Dagen efter tog Manson, Watson, Atkins, Krenwinkel, Van Houten og Clem Grogan til Los Feliz, hvor Manson og Watson bandt Leno og Rosemary LaBianca, som de fandt i huset. Lederen sendte Tex, Krenwinkel og Van Houten ind i huset. I køkkenet fandt de knive. Pigerne førte fru LaBianca ind i soveværelset, hvor de trak et pudebetræk over hendes hoved og viklede ledningen fra en læselampe om hendes hals. Kvinden holdt de to angribere i skak med lampen. Tex stak Leno med en bajonet, og da pigerne skreg, gik han hen til dem og begyndte at stikke Rosemary, hvorefter han sammen med Krenwinkel stak hende ihjel. Selvom hun allerede var død, fik de også Leslie til at fortsætte med at stikke i liget. I alt stak de kvinden 42 gange. De gik tilbage til stuen, hvor Tex dræbte Leno med 26 stik. De ridsede ordet "War" ind i hendes mave, mens de øvrige inskriptioner blev malet med blod på væggene. (Patricia Krenwinkel indrømmede, at inskriptionen "HeaLter SkeLTter" var hendes håndskrift. Hun ville egentlig skrive "Helter Skelter" med henvisning til Beatles-sangen, men hun stavede det forkert.)
-</p>
-
-<p>
-Dette var en af de sager, der fik mest medieopmærksomhed i verden. Det mest chokerende ved sagen var, at morderne alle var unge mennesker fra middelklassen med gode evner, som Manson havde forvandlet til monstre. Tex Watson var en fremragende elev og sportsudøver, søn af en metodistfamilie. Susan Atkins var tidligere kendt af alle som en genert, stille pige, der sang i både kirkekoret og skolekoret. Patricia Krenwinkel studerede særdeles godt på universitetet, arbejdede desuden som sekretær, var lærer i søndagsskolen og havde længe ønsket at blive nonne. Leslie Van Houten var datter af en lærer og en talentfuld sportsudøver. Manson begik ganske vist ikke selv nogen mord, men han manipulerede disse teenagere så dygtigt, at de ville have gjort hvad som helst for ham.
-</p>
-
-<p>
-Retssagen begyndte i juni 1970, men forløb ikke uden problemer. Det var svært for anklageren, Vincent Bugliosi, at bevise, at Charles Manson var ophavsmanden til mordene. Gerningsmændene ønskede ikke at afsløre ham. Tre hippiepiger ønskede ganske vist at vidne imod lederen, men de døde alle sammen. En af forsvarerne, Ronald Hughes, døde også, efter at han havde opgivet at forsvare Familien. I sidste ende blev Mansons skyld fastslået på baggrund af tre personers vidneudsagn.
-</p>
-
-<p>
-Barbara Hoyt opdagede sin sekts mordiske handlinger, da hun overhørte Susan Atkins prale af sine forbrydelser. Hun vandrede i timevis gennem ørkenen for at undslippe morderne. Senere truede »Familien« hende med, at de ville dræbe hendes familie, hvis hun ikke tog til Hawaii. Hun rejste af sted sammen med en anden pige, Ruth Ann Moorehouse. Ruth tilbød Hoyt en hamburger, hvori hun havde puttet 10 LSD-piller. Barbara blev indlagt på hospitalet, hvor man formåede at redde hendes liv. Da hun kom til bevidsthed, var det første, hun gjorde, at ringe til Mr. Bugliosi, og senere vidnede hun mod Manson under retssagen.
-</p>
-
-<p>
-Paul Watkins var Mansons højre hånd, men alligevel var han længe uvidende om sektenes forbrydelser. Da Manson og hans folk kom i fængsel, sendte lederen med hjælp fra medlemmer, der var på prøveløsladelse, beskeder til de mistænkte i kvindefængslet. Watkins spillede en nøglerolle i dette, men blev i mellemtiden informant for efterforskerne. Da Manson opdagede dette, forsøgte han to gange at få Paul dræbt, men uden held. Således bekræftede også Watkins Mansons skyld.
-</p>
-
-<p>
-Linda Kasabian, der var vidne til mordene på Steven Parent, Abigail Folger og Woyciech Frykowski, stjal Mansons bil for at kunne flygte. Hun tog til New Mexico, men da Familien blev anholdt, vendte hun tilbage til Los Angeles for at hente sin lille datter, der var blevet efterladt der. Til sidst blev hun anholdt, men indgik en aftale med Bugliosi. Som anklagerens hovedvidne fortalte hun således detaljerne om Tate-mordene og berettede om Mansons ansvar, og til gengæld fik hun straffrihed.
-</p>
-
-<p>
-Den 24. januar 1971 fandt juryen Charles Manson, Susan Atkins, Patricia Krenwinkel og Leslie Van Houten skyldige i mord. Den 29. marts afsagde retten den endelige dom på knap 20 minutter og dømte alle fire tiltalte til den højeste straf, der kan idømmes i Californien. Sagerne mod Tex Watson og Bobby Beausoleil, Clem Grogan og Bruce Davis blev behandlet separat. Alle otte fik den samme dom: dødsstraf i gaskammeret.
-</p>
-
-<p>
-Men i 1972 kendte USA's Højesteret dødsstraffen forfatningsstridig, og dermed blev straffen for de dømte, der indtil da havde siddet på dødsgangen, omstødt til livsvarigt fængsel. Det samme skete for The Family. Da denne strafform blev genindført i 1976, blev de gamle fanger ikke sendt tilbage til dødsgangen.
-</p>
-
-<p>
-Clem Grogan indgik en aftale med anklagemyndigheden. Han viste efterforskerne Donald Sheas grav, og til gengæld blev han løsladt efter 12 år i fængsel. Susan Atkins skrev en bog i fængslet og blev gift to gange. I 2009 døde hun af en hjernesvulst. De øvrige sidder stadig bag tremmer. Patricia Krenwinkel har taget en universitetsuddannelse og underviser nu analfabeter i at læse og skrive samt træner hjælpehunde til handicappede. Beausoleil er direktør for et videodelingswebsted. Leslie Van Houten blev for nylig næsten løsladt , men guvernøren underskrev i sidste ende ikke hendes ansøgning om prøveløsladelse. Tex Watson har også videreuddannet sig, han er nu fængselspræst, har fået fire børn med en kvinde, som han i dag er skilt fra, og har startet sin egen blog.
-</p>
-
-<p>
-Og Manson?  Han har ikke ændret sig det mindste i fængslet. Han angreb vagterne, handlede med narkotika og havde og har stadig lignende sager den dag i dag. Han manipulerer fængselsbetjentene, og for nylig var han tæt på at gifte sig med en pige, der viste sig at være pengegrisk. En amerikansk pladespiller kom i tabloidpressen, da han afslørede, at Manson havde voldtaget sin mor, og at han dermed var blevet hans far. 
-</p>
-
-<p>
-Charles Manson døde i november 2017 på et hospital i Californien i en alder af 83 år. Mansons helbredstilstand, der afsonede en livstidsdom, forværredes konstant i de sidste år, og han måtte flere gange indlægges på hospitalet inden sin død. Hans død satte igen fokus på Manson-familien og dens kulturelle indflydelse over hele verden.
-</p>
-
-<p>
-Leslie Van Houten blev løsladt på prøve i Californien i 2023 efter mere end 50 år i fængsel. Van Houten var et af de mest kendte medlemmer af Manson-familien, der blev dømt for medvirken til mordet på ægteparret LaBianca. Hendes løsladelse blev forudgået af en lang juridisk strid og adskillige afviste benådningsansøgninger, da sagen stadig var yderst splittende i den amerikanske offentlighed, selv årtier senere. Ifølge hans tilhængere udviste han eksemplarisk opførsel i fængslet og angrede sin handling, mens hans modstandere mente, at han ikke burde have været løsladt på grund af forbrydelsens grovhed.
-</p>
-
-        </div>
-
-        <!-- ADSENSE HELYE -->
-        <div class="adsense-box">
-            GOOGLE ADSENSE LINK HELYE<br><br>
-            Ide illesztheted később a Google Adsense kódot vagy affiliate linket.
-        </div>
-
-        <!-- ÚJ BLOGBEJEGYZÉS MINTA -->
-        <div class="blog-post">
-            <h2>Kvindelige massemordere</h2>
-
-<p>
-Det lesbiske par LaFonda Fay Foster og Tina Powell fra Lexington, Kentucky, var narkomaner, alkoholikere, strippere og prostituerede. LaFonda var berygtet for sit temperament. Den 23. april 1986 gik parret amok og tog fem af deres drikkekammerater som gidsler. Da de indså, at de ikke kunne få penge ud af ofrene, dræbte de gidslerne én efter én. De stak dem alle og skød dem også. De skar halsen over på én af dem, én døde af skuddene, og to blev kørt over med en bil. Deres sidste offer blev brændt levende. Allerede dagen efter blev de pågrebet. Tina fik livstid med mulighed for prøveløsladelse, mens LaFonda blev dømt til døden. Senere blev det benådet.
-</p>
-<p>
-Efter et kort fængselsophold for en mindre lovovertrædelse findes Esther Beckley sammen med Shane Harrison. I marts 1996 beslutter Esther og Shane at røve en videobutik, hvor de dræber tre ansatte og bedsteforældrene til en af de ansatte. Shane idømmes 258 års fængsel. Esther tilstår og idømmes 95 1/2 års fængsel. Hun kan ansøge om prøveløsladelse, når hun er 120 år gammel, hvilket betyder, at hun højst sandsynligt vil dø i fængslet.
-</p>
-<p>
-Jody Herring er en kvinde fra Vermont med store problemer, der på grund af sit stof- og alkoholmisbrug mister forældremyndigheden over sine tre børn. Familie og venner støtter hende, men udtrykker bekymring over hendes adfærd, hvilket yderligere fører til et brud med en kæreste og et selvmordsforsøg. I august 2015 stjæler Jody et jagtgevær og begiver sig ud på en mordtur, hvor hun myrder sin tante, Julie Falzarano, sine kusiner, Regina og Rhonda Herring, samt socialrådgiveren Lara Sobel. Uden anger eller samvittighedskvaler tilstår hun sig skyldig i ét tilfælde af overlagt mord og tre tilfælde af uagtsomt manddrab og bliver permanent adskilt fra sine børn, da hun idømmes livsvarig fængsel uden mulighed for prøveløsladelse.
-</p>
-<p>
-Susan Eubanks fra Californien hadede mænd; hun elskede ikke engang sine fire sønner. Da hendes sidste elsker også forlod hende, besluttede kvinden at hævne sig på det stærkere køn. Den 27. oktober 1996 ringede hun til sin eksmand og fortalte, at hun ville dræbe sine børn. Efter telefonopkaldet skød Susan først sin 14-årige søn Brandon. Derefter henrettede hun også sine tre yngre sønner. Mordene blev begået af en femte lille dreng. Massemorderen skød sig til sidst i maven for at vinde myndighedernes medfølelse. Det lykkedes ikke, for Susan blev dømt til døden. Siden da er hendes straf blevet omstødt til livsvarigt fængsel.
-</p>
-<p>
-Andrea Pia Yates fra Texas var meget troende. Hendes mand, Russell Yates, ønskede sig så mange børn som muligt, og Andrea fødte ham fem. Kvinden led af postpartum-psykose og vrangforestillinger, for eksempel var hun overbevist om, at hvis hun ikke dræbte sine børn, ville de ende i helvede. Den 20. juni 2001 fuldførte hun sin mission, det vil sige, at hun druknede sine fire sønner og sin lille datter i et badekar. Derefter lagde hun ofrene i sengen og ringede til sin mand, som kontaktede politiet. Andrea fortalte alt til efterforskerne og ønskede straks at blive sendt til dødsgangen. I stedet blev hun idømt livsvarig fængsel, og siden da har hun været indlagt på en psykiatrisk institution.
-</p>
-
-        </div>
-
-        <!-- ADSENSE HELYE -->
-        <div class="adsense-box">
-            GOOGLE ADSENSE LINK HELYE<br><br>
-            Ide illesztheted később a Google Adsense kódot vagy affiliate linket.
-        </div>
-
-        <div class="footer">
-            © 2026 True Crime Denmark
-        </div>
-
-    </div>
-
-    <script>
-        function searchPosts() {
-            let input = document.getElementById("searchInput").value.toLowerCase();
-            let posts = document.getElementsByClassName("blog-post");
-
-            for (let i = 0; i < posts.length; i++) {
-                let text = posts[i].innerText.toLowerCase();
-
-                if (text.includes(input)) {
-                    posts[i].style.display = "block";
-                } else {
-                    posts[i].style.display = "none";
-                }
-            }
-        }
-    </script>
 
 </body>
 </html>
