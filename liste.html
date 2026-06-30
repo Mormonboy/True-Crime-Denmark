@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste| True Crime Denmark</title>
+    <title>Lister | True Crime Denmark</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
         body {
@@ -22,19 +25,56 @@
             box-sizing: border-box;
         }
 
-        h1 {
+        h2 {
             text-align: center;
         }
 
-        p {
-            line-height: 1.6;
-        }
-
-        a {
+        .back {
+            display: inline-block;
+            margin-bottom: 20px;
             color: darkred;
             text-decoration: none;
             font-weight: bold;
         }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            display: block;
+            text-align: center;
+            padding: 20px;
+            border-radius: 12px;
+            background: #f4f4f4;
+            color: black;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            background: #e9e9e9;
+        }
+
+        .card i {
+            font-size: 30px;
+            color: darkred;
+            margin-bottom: 12px;
+        }
+
+        .footer-menu {
+            margin-top: 45px;
+        }
+
+        .adsense-box {
+            margin: 40px 0;
+            text-align: center;
+        }
+
     </style>
 </head>
 
@@ -42,97 +82,98 @@
 
 <div class="container">
 
-    <a href="index.html">← Tilbage til forsiden</a>
+    <a class="back" href="index.html">
+        ← Tilbage til forsiden
+    </a>
 
-<!-- ÚJ BLOGBEJEGYZÉS MINTA -->
-        
-        <div class="blog-post">
-            <h2>Liste </h2>
+    <h2>Lister</h2>
 
-        <!-- ÚJ BLOGBEJEGYZÉS MINTA -->
+    <div class="grid">
 
- <div class="blog-post">
-<a href="trans.html">Tre transkønnede mordere</a>
-        </div>
+        <a class="card" href="trans.html">
+            <i class="fa-solid fa-user-group"></i>
+            <h3>Tre transkønnede mordere</h3>
+        </a>
 
-        <div class="blog-post">
-<a href="dyr.html">Verdens ti mærkeligste dyr</a>
-        </div>
+        <a class="card" href="dyr.html">
+            <i class="fa-solid fa-paw"></i>
+            <h3>Verdens ti mærkeligste dyr</h3>
+        </a>
 
-            
- <div class="blog-post">
-<a href="marcos.html">Fem diktatorers koner, der var endnu mere grusomme end deres mænd</a>
-        </div>
+        <a class="card" href="marcos.html">
+            <i class="fa-solid fa-crown"></i>
+            <h3>Fem diktatorers koner</h3>
+        </a>
 
-        
-                <!-- ÚJ BLOGBEJEGYZÉS MINTA -->
-        
-        <div class="blog-post">
-<a href="manson.html">Ti ting du sikkert ikke vidste om Aileen Wuornos</a>
-        </div>
+        <a class="card" href="manson.html">
+            <i class="fa-solid fa-mask"></i>
+            <h3>10 fakta om Aileen Wuornos</h3>
+        </a>
 
-        <!-- ÚJ BLOGBEJEGYZÉS MINTA -->
-        
-<div class="blog-post">
-<a href="blog.html">De ti skolemassakrer med flest ofre</a>
-        </div>
+        <a class="card" href="blog.html">
+            <i class="fa-solid fa-school"></i>
+            <h3>De ti skolemassakrer</h3>
+        </a>
 
- <div class="blog-post">
-<a href="bundy.html">Ti ting du sikkert ikke vidste om Ted Bundy</a>
-        </div>    
-        
-<div class="blog-post">
-<a href="dahmer.html">Ti ting du sikkert ikke vidste om Jeffrey Dahmer</a>
-        </div> 
+        <a class="card" href="bundy.html">
+            <i class="fa-solid fa-user-secret"></i>
+            <h3>10 fakta om Ted Bundy</h3>
+        </a>
 
-<div class="blog-post">
-<a href="incest.html">Tre tilfælde af incest, der endte i mord</a>
-        </div> 
-          
-        <div class="blog-post">
-<a href="eubanks.html">Fem kvinder, der er blevet massemordere</a>
-        </div>
+        <a class="card" href="dahmer.html">
+            <i class="fa-solid fa-skull"></i>
+            <h3>10 fakta om Jeffrey Dahmer</h3>
+        </a>
 
+        <a class="card" href="incest.html">
+            <i class="fa-solid fa-heart-crack"></i>
+            <h3>Tre incestsager</h3>
+        </a>
 
+        <a class="card" href="eubanks.html">
+            <i class="fa-solid fa-person-rifle"></i>
+            <h3>Fem kvindelige massemordere</h3>
+        </a>
 
-        </div>
+    </div>
 
-        <!-- ADSENSE HELYE -->
-        <div class="adsense-box">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6088348392488500"
-     crossorigin="anonymous"></script>
-        </div>
+   
 
-     <div class="blog-post">
-<a href="https://ultgo.com/la-com/ENGLISH/dFEl8liU">The best financial website</a>
-        </div>     
+    <div class="grid footer-menu">
 
-        <div class="blog-post">
-<a href="omos.html">Om os</a>
-        </div>
+        <a class="card" href="omos.html">
+            <i class="fa-solid fa-circle-info"></i>
+            <h3>Om os</h3>
+        </a>
 
-<div class="blog-post">
-<a href="vilkår.html">Terms & Conditions (Vilkår)</a>
-        </div>
+        <a class="card" href="vilkår.html">
+            <i class="fa-solid fa-file-contract"></i>
+            <h3>Vilkår</h3>
+        </a>
 
-        <div class="blog-post">
-<a href="disclaimer.html">Disclaimer</a>
-        </div>
+        <a class="card" href="disclaimer.html">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <h3>Disclaimer</h3>
+        </a>
 
-        <div class="blog-post">
-<a href="privatlivspolitik.html">Privatlivspolitik</a>
-        </div>
+        <a class="card" href="privatlivspolitik.html">
+            <i class="fa-solid fa-user-shield"></i>
+            <h3>Privatlivspolitik</h3>
+        </a>
 
-  <div class="blog-post">
-<a href="kontakt.html">Kontakt</a>
-        </div>      
+        <a class="card" href="kontakt.html">
+            <i class="fa-solid fa-envelope"></i>
+            <h3>Kontakt</h3>
+        </a>
 
-        <!-- ADSENSE HELYE -->
-        <div class="adsense-box">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6088348392488500"
-     crossorigin="anonymous"></script>
-        </div>
+    </div>
 
+    <div class="adsense-box">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6088348392488500"
+        crossorigin="anonymous"></script>
+    </div>
+
+</div>
 
 </body>
 </html>
